@@ -29,7 +29,7 @@ as well as a DSL (Domain Specific Language) with which a user can interact with 
 
 ## Design
 
-Can be found in https://github.com/hanbintan2003/SQL/design.txt
+Can be found in https://github.com/hanbintan2003/SQL/blob/main/design.txt
 
 ## Features
 
