@@ -2,11 +2,10 @@
 A small version of what is called a relational database management system (DBMS), 
 as well as a DSL (Domain Specific Language) with which a user can interact with your database.
 
-- create table <TABLE_NAME> fields <FIELD_NAME> [, <FIELD_NAME> ...]
-- make table <TABLE_NAME> fields <FIELD_NAME> [, <FIELD_NAME> ...]
-- insert into <TABLE_NAME> values <VALUE> [, <VALUE> ...]
-- select <\* | FIELD_NAME> [, <FIELD_NAME> ...] from <TABLE_NAME> where <FIELD_NAME> <RELATIONAL_OPERATOR> <VALUE> [<LOGICAL_OPERATOR> <FIELD_NAME><RELATIONAL_OPERATOR> <VALUE> ...]
 
+## Preview
+
+  ![preview.png](./image/preview.PNG)
 ## Reserved keywords
 
 - create
@@ -22,9 +21,14 @@ as well as a DSL (Domain Specific Language) with which a user can interact with 
 - and, or
 - !=, = , <, >, >=, <=
 
+- create table <TABLE_NAME> fields <FIELD_NAME> [, <FIELD_NAME> ...]
+- make table <TABLE_NAME> fields <FIELD_NAME> [, <FIELD_NAME> ...]
+- insert into <TABLE_NAME> values <VALUE> [, <VALUE> ...]
+- select <\* | FIELD_NAME> [, <FIELD_NAME> ...] from <TABLE_NAME> where <FIELD_NAME> 
+<RELATIONAL_OPERATOR> <VALUE> [<LOGICAL_OPERATOR> <FIELD_NAME><RELATIONAL_OPERATOR> <VALUE> ...]
+
 ## Design
 
-change the repo name:
 Can be found in https://github.com/hanbintan2003/SQL/design.txt
 
 ## Features
