@@ -22,7 +22,6 @@ as well as a DSL (Domain Specific Language) with which a user can interact with 
 - !=, = , <, >, >=, <=
 
 - create table <TABLE_NAME> fields <FIELD_NAME> [, <FIELD_NAME> ...]
-- make table <TABLE_NAME> fields <FIELD_NAME> [, <FIELD_NAME> ...]
 - insert into <TABLE_NAME> values <VALUE> [, <VALUE> ...]
 - select <\* | FIELD_NAME> [, <FIELD_NAME> ...] from <TABLE_NAME> where <FIELD_NAME> 
 <RELATIONAL_OPERATOR> <VALUE> [<LOGICAL_OPERATOR> <FIELD_NAME><RELATIONAL_OPERATOR> <VALUE> ...]
@@ -35,6 +34,5 @@ Can be found in https://github.com/hanbintan2003/SQL/blob/main/design.txt
 
 - it supports unlimitted amount of whitespaces between the input statement
 - it supports complex boolean query statement for selection
-- it supports prefix like selection using the keyword LIKE
 - it supports permanent storage where the created tables will be stored inside the binary files
 - it has a interactive mode where the user can type into command line and the input statement can be used to interact with the database
