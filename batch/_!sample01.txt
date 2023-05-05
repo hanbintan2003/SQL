@@ -1,0 +1,115 @@
+//------ SQL Tables I Manage: --------
+// employee
+// student
+//------------------------------------
+
+//******************************************************************************
+//		CREATE AND INSERT
+//******************************************************************************
+
+//---- employeeSample01 table ----------
+create table employeeSample01 fields  last, 		first, 			dep
+insert into employeeSample01 values Blow, 		Joe, 			CS
+insert into employeeSample01 values Johnson, 	"Jimmy", 		Chemistry
+insert into employeeSample01 values Yang, 		Bo, 			CS
+insert into employeeSample01 values "Jackson",	Billy, 			Math
+insert into employeeSample01 values Johnson,	Billy, 			"Phys Ed"
+insert into employeeSample01 values "Van Gogh",	"Jim Bob", 		"Phys Ed"
+
+//----- studentSample01 table ----------
+create table studentSample01 fields 	fname, 			lname, 		major, 				age
+insert into studentSample01 values 	Flo, 			Yao, 		CS, 				20
+insert into studentSample01 values 	"Flo", 			"Jackson", 	Math,	 			21
+insert into studentSample01 values 	Calvin, 		Woo, 		Physics,			22
+insert into studentSample01 values 	"Anna Grace", 	"Del Rio", 	CS,	 				22
+
+//******************************************************************************
+//		SIMPLE SELECT 
+//******************************************************************************
+
+select * from employeeSample01 
+select * from studentSample01
+
+//------- simple strings -------------------
+select * from studentSample01 where lname = Jackson
+
+//----- quoted strings ---------------------
+select * from studentSample01 where lname = "Del Rio"
+
+//-------- non-existing string ------------------
+select * from studentSample01 where lname = "Does Not Exist"
+
+//******************************************************************************
+//		RELATIONAL OPERATORS:
+//******************************************************************************
+
+//.................
+//:Greater Than   :
+//.................
+select * from studentSample01 where lname > Yang
+
+//. . . . . . . . . . . . . (Greater Than: Non-existing) . . . . . . . . . . . .
+select * from studentSample01 where age > 50
+
+//. . . . . . . . . . . . . (Greater than: last item) . . . . . . . . . . . . .
+select * from studentSample01 where age  > 53
+
+//. . . . . . . . . . . . . (Greater Than: Passed last item) . . . . . . . . . .
+select * from studentSample01 where age > 54
+
+//.................
+//:Greater Equal  :
+//.................
+select * from studentSample01 where lname >= Yang
+
+//. . . . . .  (Greater Equal non-existing: ) . . . . . . . . . . . 
+select * from employeeSample01 where last >= Jack
+
+//.................
+//:Less Than      :
+//.................
+//. . . . . . . . . . . . . (Less Than: Non-existing) . . . . . . . . . . . . . 
+select * from studentSample01 where lname < Jackson
+
+//. . . . . . . . . . . . . (Less than: first item) . . . . . . . . . . . . . . 
+select * from studentSample01 where age  < 20
+
+//. . . . . . . . . . . . . (Less Than: before first item) . . . . . . . . . . .
+select * from studentSample01 where age  < 19
+
+//.................
+//:Less Equal     :
+//.................
+select * from studentSample01 where lname <= Smith
+
+//. . . . . .  (Less Equal non-existing: ) . . . . . . . . . . . 
+select * from employeeSample01 where last <= Peach
+
+//******************************************************************************
+//		LOGICAL OPERATORS
+//******************************************************************************
+
+//.................
+//:AND            :
+//.................
+select * from studentSample01 where fname = "Flo" and lname = "Yao"
+
+//.................
+//:OR            :
+//.................
+select * from studentSample01 where fname = Flo or lname = Jackson
+
+//.................
+//:OR AND         :
+//.................
+select * from studentSample01 where fname = Flo or major = CS and age <= 23
+
+//.................
+//:AND OR AND     :
+//.................
+select * from studentSample01 where age <30 and major=CS or major = Physics and lname = Jackson
+
+//.................
+//:OR AND OR      :
+//.................
+select * from studentSample01 where lname = Yang or major = CS and age < 23 or lname = Jackson

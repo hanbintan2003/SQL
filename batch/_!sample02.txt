@@ -1,0 +1,201 @@
+//------ SQL Tables I Manage: --------
+// employee
+// student
+//------------------------------------
+
+//******************************************************************************
+//		CREATE TABLES AND INSERT RECORDS
+//******************************************************************************
+
+create table employeeSample02 fields  last, 		first, 			dep,  		salary, 	year
+insert into employeeSample02 values Blow, 		Joe, 			CS,		 	100000, 	2018
+insert into employeeSample02 values Blow, 		JoAnn,			Physics, 	200000, 	2016
+insert into employeeSample02 values Johnson, 	Jack, 			HR, 		150000, 	2014
+insert into employeeSample02 values Johnson, 	"Jimmy", 		Chemistry,	140000, 	2018
+insert into employeeSample02 values Yao,	 	Jimmy, 			Math,		145000, 	2014
+insert into employeeSample02 values "Yao", 		Flo, 			CS,			147000, 	2012
+insert into employeeSample02 values Yang, 		Bo, 			CS,			160000, 	2013
+insert into employeeSample02 values Jackson,	"Flo", 			Math,		165000, 	2017
+insert into employeeSample02 values Jackson,	Bo,	 			Chemistry,	130000, 	2011
+insert into employeeSample02 values "Jackson",	Billy, 			Math,	 	170000, 	2017
+insert into employeeSample02 values Johnson,	"Mary Ann", 	Math,		165000, 	2014
+insert into employeeSample02 values Johnson,	"Billy Bob", 	Physics,	142000, 	2014
+insert into employeeSample02 values Johnson,	Billy, 			"Phys Ed",	102000, 	2014
+insert into employeeSample02 values "Van Gogh",	Vincent, 		Art,		240000, 	2015
+insert into employeeSample02 values "Van Gogh",	Vincent, 		CS,			245000, 	2015
+insert into employeeSample02 values "Van Gogh",	"Jim Bob", 		"Phys Ed",	230000, 	2010
+
+create table studentSelect02 fields fname, lname, major, age, company
+insert into studentSelect02 values Flo, 			Yao, 		CS, 				20, 	Google
+insert into studentSelect02 values Bo, 				Yang, 		CS, 				28,		Microsoft
+insert into studentSelect02 values "Sammuel L.", 	Jackson, 	CS, 				40,		Uber
+insert into studentSelect02 values "Flo", 			"Jackson", 	Math,	 			21,		Google
+insert into studentSelect02 values "Greg", 			"Pearson", 	Physics,			20,		Amazon
+insert into studentSelect02 values "Jim Bob", 		Smith, 		Math,	 			23,		Verizon
+insert into studentSelect02 values Calvin, 			Woo, 		Physics,			22,		Uber
+insert into studentSelect02 values "Anna Grace", 	"Del Rio", 	CS,	 				22,		USAF
+insert into studentSelect02 values "Teresa Mae", 	Gowers, 	Chemistry,			22,		Verizon
+insert into studentSelect02 values Alex,			Smith,		"Gender Studies", 	53,		Amazon
+
+//******************************************************************************
+//		SIMPLE SELECT:
+//******************************************************************************
+
+select * from employeeSample02
+select * from studentSelect02
+
+//------- simple strings -------------------
+select * from studentSelect02 where lname = Jackson
+select * from studentSelect02 where major = CS
+select * from studentSelect02 where company = Uber
+
+//----- quoted strings ---------------------
+select * from studentSelect02 where lname = "Del Rio"
+select * from studentSelect02 where fname = "Jim Bob"
+select * from studentSelect02 where fname = "Anna Grace"
+select * from studentSelect02 where fname = "Teresa Mae"
+
+//-------- non-existing string ------------------
+select * from studentSelect02 where lname = "Does Not Exist"
+
+//******************************************************************************
+//		RELATIONAL OPERATORS:
+//******************************************************************************
+
+//.................
+//:Greater Than   :
+//.................
+select * from studentSelect02 where lname > Yang
+select * from studentSelect02 where major > Math
+select * from studentSelect02 where fname > "Sammuel L."
+select * from employeeSample02 where salary > 200000
+select * from employeeSample02 where dep > Chemistry
+select * from employeeSample02 where last > Jackson
+select * from employeeSample02 where first > "Billy Bob"
+
+//. . . . . . . . . . . . . (Greater Than: Non-existing) . . . . . . . . . . . .
+select * from studentSelect02 where age > 50
+select * from studentSelect02 where age > 35
+select * from studentSelect02 where fname > T
+select * from employeeSample02 where salary > 130000
+select * from employeeSample02 where  year > 2009
+
+//. . . . . . . . . . . . . (Greater than: last item) . . . . . . . . . . . . . 
+select * from studentSelect02 where age  > 53
+select * from studentSelect02 where lname > Yao
+select * from studentSelect02 where fname > "Teresa Mae"
+select * from employeeSample02 where last > "Van Gogh"
+select * from employeeSample02 where first > Vincent
+select * from employeeSample02 where salary > 260000
+
+//. . . . . . . . . . . . . (Greater Than: Passed last item) . . . . . . . . . .
+select * from studentSelect02 where age > 54
+select * from studentSelect02 where lname > Zoolander
+select * from employeeSample02 where last > Zoolaner
+select * from employeeSample02 where first > Xu
+
+//.................
+//:Greater Equal  :
+//.................
+select * from studentSelect02 where lname >= Yang
+select * from studentSelect02 where fname >= "Sammuel L."
+select * from studentSelect02 where age >= 40
+
+//. . . . . .  (Greater Equal non-existing: ) . . . . . . . . . . .  . . . . . .
+select * from employeeSample02 where last >= Jack
+select * from employeeSample02 where first >= Bill
+select * from employeeSample02 where salary >= 235000
+
+//.................
+//:Less Than      :
+//.................
+//. . . . . . . . . . . . . (Less Than: Non-existing) . . . . . . . . . . . . .
+select * from studentSelect02 where lname < Jackson
+select * from studentSelect02 where major < Math
+select * from studentSelect02 where fname < "Jim Bob"
+select * from employeeSample02 where salary < 200000
+select * from employeeSample02 where dep < CS
+select * from employeeSample02 where last < Jackson
+select * from employeeSample02 where first < "Billy Bob"
+
+//. . . . . . . . . . . . . (Less than: first item) . . . . . . . . . . . . . .
+select * from studentSelect02 where age  < 20
+select * from studentSelect02 where lname < "Del Rio"
+select * from studentSelect02 where fname < Alex
+select * from employeeSample02 where last < Blow
+select * from employeeSample02 where first < Billy
+select * from employeeSample02 where salary < 100000
+
+
+//. . . . . . . . . . . . . (Less Than: before first item) . . . . . . . . . . .
+select * from studentSelect02 where age  < 19
+select * from studentSelect02 where lname < Adams
+select * from studentSelect02 where fname < Adam
+select * from employeeSample02 where last < Alex
+select * from employeeSample02 where first < Avory
+select * from employeeSample02 where dep < Alchemy
+
+//.................
+//:Less Equal     :
+//.................
+select * from studentSelect02 where lname <= Smith
+select * from studentSelect02 where fname <= Greg
+select * from studentSelect02 where age <= 40
+
+//. . . . . .  (Less Equal non-existing: ) . . . . . . . . . . . 
+select * from employeeSample02 where last <= Peach
+select * from employeeSample02 where first <= Gary
+select * from employeeSample02 where salary <= 23500
+
+//******************************************************************************
+//		LOGICAL OPERATORS
+//******************************************************************************
+
+//.................
+//:AND            :
+//.................
+select * from studentSelect02 where fname = "Flo" and lname = "Yao"
+select * from studentSelect02 where major = "CS" and age < 25
+select * from studentSelect02 where major < Math and age > 25
+select * from employeeSample02 where dep = CS and salary > 150000
+select * from employeeSample02 where last = Jackson and year < 2015
+select * from employeeSample02 where last = Johnson and year >=2014
+
+//.................
+//:OR            :
+//.................
+select * from studentSelect02 where fname = Flo or lname = Jackson
+select * from studentSelect02 where age >=40  or company = Verizon
+select * from employeeSample02 where first = Bo or last = Johnson
+select * from employeeSample02 where year >= 2015 or dep = CS
+select * from employeeSample02 where year >= 2020 or dep = CompSci
+select * from employeeSample02 where year < 2010 or dep = CS
+
+//.................
+//:OR AND         :
+//.................
+select * from studentSelect02 where fname = Flo or major = CS and age <= 23
+select * from employeeSample02 where last = "Van Gogh" or last = Jackson and salary >= 165000
+select * from studentSelect02 where lname = Jackson or age < 23 and company > Uber
+select * from studentSelect02 where lname = Jackson or age > 23 and company > Uber
+select * from studentSelect02 where lname = Jackson or age > 73 and company > Uber
+select * from studentSelect02 where lname = "Jackson" or age > 73 and company > Uber
+select * from studentSelect02 where lname = "Solis" or age > 73 and company > Uber
+select * from studentSelect02 where lname = "Solis" or age > 23 and company > Uber
+
+//.................
+//:AND OR AND     :
+//.................
+select * from studentSelect02 where age <30 and major=CS or major = Physics and company = Amazon
+select * from studentSelect02 where age <=40 and company=Uber or major = CS and company = Google
+select * from employeeSample02 where dep = CS and salary >= 160000 or year > 2014 and last = "Van Gogh"
+select * from employeeSample02 where dep = CS and salary >= 160000 or year > 2015 and last = "Van Gogh"
+
+//.................
+//:OR AND OR      :
+//.................
+select * from studentSelect02 where lname = Yang or major = CS and age < 23 or company = Google 
+select * from studentSelect02 where major = Physics or major = Math and company = Google or lname = Jackson
+select * from employeeSample02 where dep = CS or year >2014 and year < 2018 or salary >= 240000
+select * from employeeSample02 where dep = CS or year >2014 and year < 2018 or salary >= 242000
+select * from employeeSample02 where dep = CS or year >2014 and year < 2018 or salary > 240000
