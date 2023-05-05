@@ -5,7 +5,7 @@ as well as a DSL (Domain Specific Language) with which a user can interact with 
 
 ## Preview
 
-  ![preview.png](./image/preview.PNG)
+  ![preview.png](./image/preview.png)
 ## Reserved keywords
 
 - create
