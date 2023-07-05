@@ -1,4 +1,4 @@
-# SQL
+# SQL_InCPP
 A small version of what is called a relational database management system (DBMS), 
 as well as a DSL (Domain Specific Language) with which a user can interact with your database.
 
@@ -28,11 +28,11 @@ as well as a DSL (Domain Specific Language) with which a user can interact with 
 
 ## Design
 
-Can be found in https://github.com/hanbintan2003/SQL/blob/main/design.txt
+It can be found in https://github.com/hanbintan2003/SQL/blob/main/design.txt
 
 ## Features
 
-- it supports unlimitted amount of whitespaces between the input statement
-- it supports complex boolean query statement for selection
+- it supports unlimited amount of whitespaces between the input statement
+- it supports complex boolean query statements for selection
 - it supports permanent storage where the created tables will be stored inside the binary files
-- it has a interactive mode where the user can type into command line and the input statement can be used to interact with the database
+- it has an interactive mode where the user can type into the command line and the input statement can be used to interact with the database
